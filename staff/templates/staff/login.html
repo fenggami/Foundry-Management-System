@@ -1,0 +1,24 @@
+
+
+{% if errors %}
+<p>用户名或密码错误</p>
+{% endif %}
+<div class="container">
+
+  <form method="post" action="{% url 'login' %}">
+  {% csrf_token %}
+  <table>
+    <tr>
+      <td>{{ form.username.label_tag }}</td>
+      <td>{{ form.username }}</td>
+    </tr>
+    <tr>
+      <td>{{ form.password.label_tag }}</td>
+      <td>{{ form.password }}</td>
+    </tr>
+  </table>
+
+  <input class="btn btn-primary btn-lg"  type="submit" value="登录" />
+</form>
+</div>
+
